@@ -305,10 +305,7 @@ router.get('/github/:username', async (req, res) => {
             headers: { 'user-agent': 'node.js' },
         };
 
-        console.log(options);
-
         request(options, (error, response, body) => {
-            // console.log(body);
             if(error) console.log(error);
 
             if(response.statusCode !== 200) {
