@@ -1,0 +1,15 @@
+node_modules/
+bower_components/
+npm-debug.log
+npm-debug.log.*
+package-lock.json
+
+# IntelliJ
+*.iml
+.idea/
+
+#OS X
+.DS_Store
+
+#VS Code
+.vscode/
