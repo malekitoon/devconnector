@@ -23,6 +23,8 @@
     ],
     "rules": {
       "jsx-quotes": ["error", "prefer-single"],
-      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+      "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+      "object-curly-newline": ["error", { "multiline": true }],
+      "arrow-parens": ["error", "as-needed"]
     }
 }
