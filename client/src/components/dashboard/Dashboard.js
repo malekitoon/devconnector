@@ -52,7 +52,12 @@ const Dashboard = ({
 
 Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
-  auth: PropTypes.shape({ user: PropTypes.shape({ name: PropTypes.string.isRequired }) }).isRequired,
+  auth: PropTypes.shape({
+    user: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      email: PropTypes.string.isRequired,
+    }),
+  }).isRequired,
   profile: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
     profile: PropTypes.shape({}),
