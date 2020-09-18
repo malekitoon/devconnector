@@ -7,6 +7,7 @@ const auth = require('../../middleware/auth');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
+const Post = require('../../models/Post');
 
 // @route   GET api/profile/me
 // @desc    Get current user profile
@@ -70,9 +71,9 @@ router.post('/', [ auth, [
     if(status) profileFields.status = status;
     if(githubusername) profileFields.githubusername = githubusername;
     if(skills) profileFields.skills = (
-      typeof skills === 'String'
-      ? skills.split(',')
-      : skills).map(skill => skill.trim());
+      typeof skills === 'Object'
+      ? skills
+      : skills.split(',')).map(skill => skill.trim());
 
     // Build social object
     profileFields.social = {};
@@ -147,6 +148,9 @@ router.get('/user/:user_id', async (req, res) => {
 // @access  Private
 router.delete('/', auth, async (req, res) => {
     try {
+        // Remove user posts
+        await Post.deleteMany({ user: req.user.id});
+
         // Remove profile
         await Profile.findOneAndRemove({ user: req.user.id });
 

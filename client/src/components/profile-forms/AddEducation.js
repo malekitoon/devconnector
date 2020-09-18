@@ -97,7 +97,7 @@ const AddEducation = ({ addEducation, history }) => {
               }}
             />
             {' '}
-            Current Education
+            Current School
           </p>
         </div>
         <div className='form-group'>

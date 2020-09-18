@@ -16,7 +16,7 @@ Alert.propTypes = {
   alerts: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string.isRequired,
     msg: PropTypes.string.isRequired,
-    alertType: PropTypes.string.isRequired,
+    alertType: PropTypes.string,
   })).isRequired,
 };
 
