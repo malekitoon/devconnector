@@ -106,7 +106,9 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
 Register.propTypes = {
   setAlert: PropTypes.func.isRequired,
   register: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool.isRequired,
+  isAuthenticated: PropTypes.bool,
 };
+
+Register.defaultProps = { isAuthenticated: null };
 
 export default connect(mapStateToProps, actions)(Register);

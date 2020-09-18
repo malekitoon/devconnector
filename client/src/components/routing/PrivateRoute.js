@@ -15,9 +15,9 @@ const PrivateRoute = ({ component: Component, auth: { isAuthenticated, loading }
 );
 
 PrivateRoute.propTypes = {
-  component: PropTypes.element.isRequired,
+  component: PropTypes.object.isRequired, // eslint-disable-line
   auth: PropTypes.shape({
-    isAuthenticated: PropTypes.bool.isRequired,
+    isAuthenticated: PropTypes.bool,
     loading: PropTypes.bool.isRequired,
   }).isRequired,
 };
