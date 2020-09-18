@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { getCurrentProfile } from '../../actions/profile';
 import Spinner from '../layouts/Spinner';
 import DashboardActions from './DashboardActions';
+import Experience from './Experience';
+import Education from './Education';
 
 const mapStateToProps = state => ({
   auth: state.auth,
@@ -38,6 +40,8 @@ const Dashboard = ({
           ? (
             <>
               <DashboardActions />
+              <Experience experience={profile.experience} />
+              <Education education={profile.education} />
             </>
           )
           : (
@@ -65,7 +69,10 @@ Dashboard.propTypes = {
   }).isRequired,
   profile: PropTypes.shape({
     loading: PropTypes.bool.isRequired,
-    profile: PropTypes.shape({}),
+    profile: PropTypes.shape({
+      experience: PropTypes.arrayOf(PropTypes.shape({})),
+      education: PropTypes.arrayOf(PropTypes.shape({})),
+    }),
   }).isRequired,
 };
 

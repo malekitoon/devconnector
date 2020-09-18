@@ -29,6 +29,8 @@
       "no-console": ["error", {  "allow": ["warn", "error"] }],
       "react/no-unescaped-entities": 0,
       "no-shadow": 0,
-      "react/jsx-props-no-spreading": 0
+      "react/jsx-props-no-spreading": 0,
+      "no-underscore-dangle": 0,
+      "jsx-a11y/control-has-associated-label": 0
     }
 }
