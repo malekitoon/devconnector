@@ -42,6 +42,7 @@ export const getProfiles = () => async dispatch => {
       payload: res.data,
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: PROFILE_ERROR,
       payload: {
